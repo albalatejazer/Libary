@@ -16,3 +16,4 @@ C:\Users\albal\OneDrive\Documents\Source code\Training\Libary\Library.Core\.tmpb
 C:\Users\albal\OneDrive\Documents\Source code\Training\Libary\Library.Core\.tmpbuild\Debug\net10.0\Library.Core.runtimeconfig.json
 C:\Users\albal\OneDrive\Documents\Source code\Training\Libary\Library.Core\.tmpbuild\Debug\net10.0\Library.Core.dll
 C:\Users\albal\OneDrive\Documents\Source code\Training\Libary\Library.Core\.tmpbuild\Debug\net10.0\Library.Core.pdb
+C:\Users\albal\OneDrive\Documents\Source code\Training\Libary\Library.Core\obj\Debug\net10.0\Library.Core.sourcelink.json

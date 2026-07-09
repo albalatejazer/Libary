@@ -11,7 +11,7 @@ namespace Library.Core.Contracts
     {
         Task<IEnumerable<AuthorDto>> ListAuthors();
         Task<AuthorDto> GetAuthorById(int authorId);
-        Task<AuthorDto> SaveAsync(AuthorDto? item);
+        Task<AuthorDto> SaveAsync(AuthorDto item);
         Task<IEnumerable<AuthorDto>> SearchByKey(string sKey);
     }
 }

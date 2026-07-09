@@ -38,17 +38,11 @@ public class AuthorService : IAuthorService
         if (res == null) return null;
         return _mapper.Map<AuthorDto>(res);
     }
-    public async Task<AuthorDto?> SaveAsync(AuthorDto? item)
+    public async Task<AuthorDto> SaveAsync(AuthorDto item)
     {
-        if (item == null)
-        {
-            return null;
-        }
-
         var obj = _mapper.Map<Author>(item);
         await _ctx.Authors.AddAsync(obj);
         await _ctx.SaveChangesAsync();
-
         return _mapper.Map<AuthorDto>(obj);
     }
 

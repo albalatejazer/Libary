@@ -41,8 +41,8 @@ namespace Library.WebApi.Controllers
         [ProducesResponseType(typeof(AuthorDto), StatusCodes.Status201Created)]
         public async Task<ActionResult<AuthorDto>> SaveAsync([FromBody] AuthorDto item)
         {
-            var res = _service.SaveAsync(item);
-            return CreatedAtAction("GetAuthorById", new { authorId = item.AuthorId }, item);
+            var res = await _service.SaveAsync(item);
+            return CreatedAtAction(nameof(GetAuthorById), new { id = res.AuthorId }, res);
         }
     }
 }

@@ -47,6 +47,26 @@ namespace Library.WebApi.controllers
             var res = await _service.SearchByKey(sKey, sBy);
             return Ok(res);
         }
-
+        [HttpPut("updateBookShelfLocation")]
+        [ProducesResponseType(typeof(BookDto), StatusCodes.Status202Accepted)]
+        public async Task<ActionResult<BookDto>> UpdateAsync([FromBody] BookDto item)
+        {
+            var res = await _service.UpdateAsync(item);
+            return res;
+        }
+        
+        [HttpPost("BookAuthor")]
+        public async Task<ActionResult<BookAuthorDto>> SaveAsync([FromBody] BookAuthorDto item)
+        {
+            var res = await _service.SaveAsync(item);
+            return res;
+        }
+        [HttpGet("GetBooksByAuthor/{authorId}")]
+        [ProducesResponseType(typeof(BookDto), StatusCodes.Status200OK)]
+        public async Task<ActionResult<BookDto>> GetBooksByAuthor(int authorId)
+        {
+            var res = await _service.GetBooksByAuthorAsync(authorId);
+            return Ok(res);
+        }
     }
 }

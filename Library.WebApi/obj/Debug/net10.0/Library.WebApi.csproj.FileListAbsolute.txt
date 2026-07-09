@@ -241,3 +241,4 @@ C:\Users\albal\OneDrive\Documents\Source code\Training\Libary\Library.WebApi\.tm
 C:\Users\albal\OneDrive\Documents\Source code\Training\Libary\Library.WebApi\.tmpbuild\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 C:\Users\albal\OneDrive\Documents\Source code\Training\Libary\Library.WebApi\.tmpbuild\Debug\net10.0\Library.Core.dll
 C:\Users\albal\OneDrive\Documents\Source code\Training\Libary\Library.WebApi\.tmpbuild\Debug\net10.0\Library.Core.pdb
+C:\Users\albal\OneDrive\Documents\Source code\Training\Libary\Library.WebApi\obj\Debug\net10.0\Library.WebApi.sourcelink.json

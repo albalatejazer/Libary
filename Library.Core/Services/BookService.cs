@@ -65,6 +65,48 @@ namespace Library.Core.Services
             await _ctx.SaveChangesAsync();
             return _mapper.Map<BookDto>(obj);
         }
+        public async Task<BookDto> UpdateAsync(BookDto item)
+        {
+            var obj = await _ctx.Books.Where(x => x.BookId == item.BookId).FirstOrDefaultAsync();
+            _mapper.Map(item, obj);
+            await _ctx.SaveChangesAsync();
+            return _mapper.Map<BookDto>(obj);
+        }
+        #endregion
+
+
+        #region BookAuthor
+        public async Task<BookDto> GetBookByAuthorId(int authorId)
+        {
+            var books = await _ctx.BookAuthors
+           .AsNoTracking()
+           .Where(x => x.AuthorId == authorId)
+           .Include(x => x.Book)
+           .Select(x => x.Book)
+           .ToListAsync();
+
+            return _mapper.Map<BookDto>(books);
+        }
+        public async Task<BookAuthorDto> SaveAsync(BookAuthorDto item)
+        {
+
+            var obj = _mapper.Map<BookAuthor>(item);
+            await _ctx.BookAuthors.AddAsync(obj);
+            await _ctx.SaveChangesAsync();
+            return _mapper.Map<BookAuthorDto>(obj);
+        }
+        public async Task<IEnumerable<BookDto>> GetBooksByAuthorAsync(int authorId)
+        {
+            var books = await _ctx.BookAuthors
+                .AsNoTracking()
+                .Where(ba => ba.AuthorId == authorId)
+                .Include(ba => ba.Book)       // load related Book
+                .Select(ba => ba.Book)        // project only the Book entity
+                .ToListAsync();
+
+            return _mapper.Map<IEnumerable<BookDto>>(books);
+        }
+
         #endregion
     }
 }

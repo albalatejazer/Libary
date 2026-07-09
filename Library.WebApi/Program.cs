@@ -1,6 +1,7 @@
 using Library.Core.contracts;
 using Library.Core.Contracts;
 using Library.Core.Data;
+using Library.Core.services;
 using Library.Core.Services;
 using Library.WebApi;
 using Microsoft.EntityFrameworkCore;
@@ -27,6 +28,9 @@ if (database_type == "postgres")
 
 builder.Services.AddScoped<IAuthorService, AuthorService>();
 builder.Services.AddScoped<IBookService, BookService>();
+builder.Services.AddScoped<IGenreService, GenreService>();
+builder.Services.AddScoped<IShelfLocationService, ShelfLocationService>();
+builder.Services.AddScoped<IBorrowingService, BorrowingService>();
 
 var app = builder.Build();
 

@@ -11,7 +11,6 @@ public class Borrowing
     public int BookId { get; set; }
     public required string BorrowName { get; set; }
     public DateOnly BorrowDate { get; set; }
-    public DateOnly? ReturnDate { get; set; }
-    public string Status { get; set; } = "Borrowed";
+    public DateOnly? ReturnDate { get; set; } = null;
     public virtual Book? Book { get; set; }
 }
